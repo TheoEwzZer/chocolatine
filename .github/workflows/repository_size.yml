@@ -1,0 +1,16 @@
+name: SIZE
+
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          echo "${{ github.ref }}"
+          du -skh --exclude=".git"
