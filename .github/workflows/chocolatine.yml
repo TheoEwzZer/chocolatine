@@ -34,8 +34,7 @@ jobs:
     steps:
       - name: Make
         run:  |
-          ls
-          make
+          ls -Rl
         timeout-minutes: 2
       - name: Make clean
         run: make clean
