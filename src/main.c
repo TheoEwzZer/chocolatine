@@ -5,7 +5,6 @@
 ** test
 */
 
-int main(void)
-{
+int main() {
     write(1, "Hello World!\n", 13);
 }

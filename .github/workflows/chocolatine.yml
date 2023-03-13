@@ -9,7 +9,7 @@ on:
       - 'ga-ignore-*'
 
 env:
-  EXECUTABLES: chocolatinee
+  EXECUTABLES: chocolatine
   MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-MAR-2-1-bschocolatine-theo.fabiano.git
 
 jobs:
