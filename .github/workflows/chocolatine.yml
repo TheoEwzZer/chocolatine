@@ -20,5 +20,5 @@ jobs:
       run: |
         check.sh $(pwd) $(pwd)
     - name: Afficher les annotations d'erreur pour le style de code
-      if: failure()
+      #if: failure()
       run: echo "::error file=main.c,line=1::Missing semicolon"
