@@ -21,10 +21,12 @@ jobs:
         check.sh $(pwd) $(pwd)
     - name: Display annotations errors
       run: |
-        while read ligne; do
-          echo "$ligne" | sed 's/\(.*\):\([0-9]*\): \(.*\):\([^-]*\)-\(.*\)/::error file=\1,line=\2,title=\3 coding style error::\4-\5/'
-        done < $(pwd)/coding-style-reports.log
-        exit 1
+        if [ -s $(pwd)/coding-style-reports.log ]; then
+          while read ligne; do
+            echo "$ligne" | sed 's/\(.*\):\([0-9]*\): \(.*\):\([^-]*\)-\(.*\)/::error file=\1,line=\2,title=\3 coding style error::\4-\5/'
+          done < $(pwd)/coding-style-reports.log
+          exit 1
+        fi
   check_program_compilation:
     runs-on: ubuntu-latest
     container:
