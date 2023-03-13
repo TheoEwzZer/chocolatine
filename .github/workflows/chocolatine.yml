@@ -17,4 +17,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Check coding style
-      run: check.sh $(pwd) $(pwd)
+      run: |
+        check.sh $(pwd) $(pwd)
+    - name: Afficher les annotations d'erreur pour le style de code
+      if: failure()
+      run: echo "::error file=main.c,line=1::Missing semicolon"
