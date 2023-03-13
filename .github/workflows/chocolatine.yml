@@ -22,4 +22,7 @@ jobs:
         ls -l $(pwd)/coding_style
         cat $(pwd)/coding_style/coding-style-reports.log
     - name: Display annotations errors
-      run: echo "::error file=main.c,line=1::Missing semicolon"
+      run: |
+        while read ligne; do
+          echo "::error $ligne"
+        done < test.txt
