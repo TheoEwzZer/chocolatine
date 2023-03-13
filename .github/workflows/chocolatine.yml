@@ -10,7 +10,7 @@ on:
 
 env:
   EXECUTABLES: chocolatine
-  MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-MAR-2-1-bschocolatine-theo.fabiano.git
+  MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-MAR-2-1-chocolatine-theo.fabiano.git
 
 jobs:
   check_coding_style:
