@@ -47,7 +47,6 @@ jobs:
         run: |
           IFS=',' EXEC_ARRAY=${{ env.EXECUTABLES }}
           for executable in "${EXEC_ARRAY[@]}"; do
-            executable="./${executable}"
             if [ ! -x "$executable" ]; then
               echo "The executable file $executable does not exist or is not executable"
               exit 1
