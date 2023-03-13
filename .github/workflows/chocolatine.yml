@@ -10,6 +10,7 @@ on:
 
 env:
   EXECUTABLES: ./chocolatine
+  MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-MAR-2-1-bschocolatine-theo.fabiano.git
 
 jobs:
   check_coding_style:
@@ -60,3 +61,15 @@ jobs:
       - name: Make tests_run
         run: make tests_run
         timeout-minutes: 2
+  push_to_mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url: 
+            ${{ secrets.MIRROR_URL }}
+          ssh_private_key:
+            ${{ secrets.GIT_SSH_PRIVATE_KEY }}
