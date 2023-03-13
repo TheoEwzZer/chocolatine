@@ -50,3 +50,13 @@ jobs:
               exit 1
             fi
           done
+  run_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Make tests_run
+        run: make tests_run
+        timeout-minutes: 2

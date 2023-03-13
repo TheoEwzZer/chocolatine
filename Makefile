@@ -34,4 +34,7 @@ fclean:	clean
 
 re:		fclean all
 
+tests_run:
+		@make -s clean
+
 .PHONY:	all clean fclean re
