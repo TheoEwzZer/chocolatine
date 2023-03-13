@@ -1,4 +1,4 @@
-name: Date
+name: DATE
 
 on:
   push:
