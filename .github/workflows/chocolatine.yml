@@ -25,3 +25,22 @@ jobs:
           echo "$ligne" | sed 's/\(.*\):\([0-9]*\): \(.*\):\([^-]*\)-\(.*\)/::error file=\1,line=\2,title=\3 coding style error::\4-\5/'
         done < $(pwd)/coding-style-reports.log
         exit 1
+  check_program_compilation:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker:latest
+    steps:
+      - name: make
+        run: make
+        timeout-minutes: 2
+      - name: Make clean
+        run: make clean
+      - name: Check executables
+        run: |
+          IFS=',' EXEC_ARRAY=${{ env.EXECUTABLES }}
+          for executable in "${EXEC_ARRAY[@]}"; do
+            if [ ! -x "$executable" ]; then
+              echo "The executable file $executable does not exist or is not executable"
+              exit 1
+            fi
+          done
