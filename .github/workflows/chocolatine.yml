@@ -8,6 +8,9 @@ on:
     branches-ignore:
       - 'ga-ignore-*'
 
+env:
+  EXECUTABLES: ./chocolatine
+
 jobs:
   check_coding_style:
     runs-on: ubuntu-latest
