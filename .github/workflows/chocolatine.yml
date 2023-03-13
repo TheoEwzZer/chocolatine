@@ -17,8 +17,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Check coding style
-      run: |
-        check.sh $(pwd) $(pwd)
+      run: check.sh $(pwd) $(pwd)
     - name: Display annotations errors
       run: |
         if [ -s $(pwd)/coding-style-reports.log ]; then
@@ -35,8 +34,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Make
-        run:  |
-          ls -Rl
+        run: make
         timeout-minutes: 2
       - name: Make clean
         run: make clean
