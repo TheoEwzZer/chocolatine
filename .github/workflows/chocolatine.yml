@@ -25,4 +25,4 @@ jobs:
       run: |
         while read ligne; do
           echo "::error $ligne"
-        done < test.txt
+        done < $(pwd)/coding_style/coding-style-reports.log
