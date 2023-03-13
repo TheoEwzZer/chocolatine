@@ -1,0 +1,20 @@
+name: Epitech
+
+on:
+  push:
+    branches-ignore:
+      - 'ga-ignore-*'
+  pull_request:
+    branches-ignore:
+      - 'ga-ignore-*'
+
+jobs:
+  check_coding_style:
+    runs-on: ubuntu-latest
+    container: ghcr.io/epitech/coding-style-checker:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Check coding style
+        run: |
+          check $(pwd) $(pwd)
