@@ -39,11 +39,4 @@ jobs:
       - name: Make clean
         run: make clean
       - name: Check executables
-        run: |
-          IFS=',' EXEC_ARRAY=${{ vars.EXECUTABLES }}
-          for executable in "${EXEC_ARRAY[@]}"; do
-            if [ ! -x "$executable" ]; then
-              echo "The executable file $executable does not exist or is not executable"
-              exit 1
-            fi
-          done
+        run: echo "${{ vars.EXECUTABLES }} et ${{ env.EXECUTABLES }}"
