@@ -24,5 +24,5 @@ jobs:
     - name: Display annotations errors
       run: |
         while read ligne; do
-          echo "::error $ligne"
+          echo "$ligne" | sed 's/\(.*\):\([0-9]*\): \(.*\):\([^-]*\)-\(.*\)/::error file=\1,line=\2,title=\3 coding style error::\4-\5/'
         done < $(pwd)/coding_style/coding-style-reports.log
