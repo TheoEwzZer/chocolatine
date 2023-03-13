@@ -63,6 +63,7 @@ jobs:
         timeout-minutes: 2
   push_to_mirror:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
