@@ -33,7 +33,9 @@ jobs:
       image: epitechcontent/epitest-docker:latest
     steps:
       - name: Make
-        run: make
+        run:  |
+          ls
+          make
         timeout-minutes: 2
       - name: Make clean
         run: make clean
