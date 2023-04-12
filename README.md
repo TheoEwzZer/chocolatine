@@ -8,9 +8,9 @@ Your repositories are hosted on GitHub, and GitHub has an intuitive way of autom
 
 In this project, you will setup a GitHub Actions workflow to enforce good practices and diverse rules in a repository.
 
-```
+```text
 GitHub Actions are free and unlimited for public repositories, and free up to 2,000 minutes
-per month for personnal private repositories, which is quite generous!
+per month for personal private repositories, which is quite generous!
 ```
 
 ## TECHNICAL DETAILS
@@ -22,16 +22,18 @@ You will have to turn in a single YAML workflow file named ```chocolatine.yml```
 
 **Your workflow must be usable with your different Epitech projects and their respective technologies and associated tools.**
 
-```
+```text
 For this project, the only external actions allowed are actions/checkout and pixta-dev/
 repository-mirroring-action.
 All other external actions (which you can find on the GitHub marketplace for example)
 are strictly forbidden.
 ```
-```
+
+```text
 If particular settings or elements are not specified or addressed in the subject, you are
 free to do as you please with them.
 ```
+
 ### EVALUATION
 
 Your workflow will be tested by copying your ```chocolatine.yml``` file, **and only this file**, into a test repository’s ```.github/workflows``` directory.
@@ -42,7 +44,7 @@ Make then sure that the workflow is **self-contained** and does **not need any e
 You might need to use secured data or values to make your workflow successfully run.
 In this case, you **must** use secrets.
 
-```
+```text
 If any hardcoded sensitive value is found in your workflow file, your entire project will
 fail. You have been warned.
 ```
@@ -58,10 +60,11 @@ Furthermore, **each job must** :
 - start by **checking out the repository** to the relevant branch;
 - only be run if the **previous job has succeeded**.
 
-```
+```text
 The order in which the jobs are expected to be run is the order in which they are defined
 below in the subject.
 ```
+
 ### ENVIRONMENT VARIABLES
 
 You need to define several environment variables, available at the **workflow level**.
@@ -69,10 +72,11 @@ You need to define several environment variables, available at the **workflow le
 - ```MIRROR_URL:``` the URL of the Epitech repository which will act as a mirror;
 - ```EXECUTABLES:``` a comma-separated list of the paths of the executables expected to be produced (it can have a single executable, like ```"pushswap"``` or ```"lib/my/libmy.a"```, or several, like ```"antman/antman,giantman/giantman"```).
 
-```
+```text
 All environment variables’ values will be strings.
 ```
-```
+
+```text
 "available at the workflow level" means that the environment variables must be only
 defined once, and be available for all jobs and steps of the workflow.
 ```
@@ -88,10 +92,11 @@ Create a job with a ```check_coding_style``` ID that runs in ```aghcr.io/epitech
 ```bash
 check.sh $(pwd) $(pwd)
 ```
+
 - if any, displays each coding style error as an _error annotation_ ;
 - makes the job fail if there are any coding style errors.
 
-```
+```text
 By using the appropriate error annotation parameters, you will be able to click on it and
 be taken to the precise line of the offending file.
 ```
