@@ -127,7 +127,7 @@ It must use a secret named ```GIT_SSH_PRIVATE_KEY``` to specify the SSH private 
 
 ## FINAL MARK
 
-### MARK: 45/50
+### MARK: 45 / 50 (90%)
 
 - Preliminaries (2 / 2)
 - General configuration (4 / 4)
