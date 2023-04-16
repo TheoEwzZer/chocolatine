@@ -124,3 +124,25 @@ Create a job with a ```push_to_mirror``` ID that runs a mirroring to the reposit
 It must use a secret named ```GIT_SSH_PRIVATE_KEY``` to specify the SSH private key to use.
 
 **This job must only be executed when a push is made to the repository.**
+
+## FINAL MARK
+
+### MARK: 45/50
+
+Preliminaries (2 / 2)
+
+General configuration (4 / 4)
+
+Job "check_coding_style" (7.5 / 7.5)
+
+Job "check_program_compilation" (6 / 6)
+
+Job "run_tests" (3 / 3)
+
+Job "push_to_mirror" (4.5 / 4.5)
+
+Clear and useful names (5 / 10)
+
+Idiomatic use of GitHub Actions features (5 / 5)
+
+Miscellaneous good practices (8 / 8)
